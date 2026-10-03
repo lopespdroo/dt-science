@@ -94,9 +94,6 @@ interests_by_user_id = defaultdict(list)
 for user_id, interest in interests:
     interests_by_user_id[user_id].append(interest)
 
-print(user_ids_by_interest)
-print(interests_by_user_id)
-
 def most_common_interests_with(user):
     return Counter(
         interested_user_id
@@ -106,3 +103,22 @@ def most_common_interests_with(user):
     )
 
 print(most_common_interests_with(users[0]))
+
+salaries_and_tenures = [(83000, 8.7), (88000, 8.1),
+                        (48000, 0.7), (76000, 6),
+                        (69000, 6.5), (76000, 7.5),
+                        (60000, 2.5), (83000, 10),
+                        (48000, 1.9), (63000, 4.2)]
+
+salary_by_tenure = defaultdict(list)
+
+for salary, tenure in salaries_and_tenures:
+    salary_by_tenure[tenure].append(salary)
+
+average_salary_by_tenure = {
+        tenure: sum(salaries) / len(salaries)
+        for tenure, salaries in salary_by_tenure.items()
+}
+
+#finish later. going to chapter two.
+    
